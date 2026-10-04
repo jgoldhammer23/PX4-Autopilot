@@ -14,6 +14,7 @@ px4_add_library(VehicleActuatorEffectiveness
 	ActuatorEffectivenessMCTilt.cpp
 	ActuatorEffectivenessMCTilt.hpp
 	ActuatorEffectivenessMultirotor.cpp
+	ActuatorEffectivenessVPP.cpp
 	ActuatorEffectivenessMultirotor.hpp
 	ActuatorEffectivenessTilts.cpp
 	ActuatorEffectivenessTilts.hpp

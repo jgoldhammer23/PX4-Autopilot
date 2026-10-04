@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Written by Aniruth Vishnupriyan for Texas A&M University Vertical Flight Design
+#
+# @name Generic VPP Quadcopter X
+#
+# @type Quadrotor x
+# @class Copter
+#
+# @maintainer Aniruth
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+# Route to the custom C++ VPP effectiveness class
+param set-default CA_AIRFRAME 20
+
+# Motor/Governor Spool-Up timing (seconds)
+param set-default COM_SPOOLUP_TIME 3.0
+
+# SAFE DEFAULT: RPM curve at zero (stock default is 1.0 = full RPM on arming).
+# Raise deliberately when ready to spin ESCs.
+param set-default CA_HELI_THR_C0 0
+param set-default CA_HELI_THR_C1 0
+param set-default CA_HELI_THR_C2 0
+param set-default CA_HELI_THR_C3 0
+param set-default CA_HELI_THR_C4 0

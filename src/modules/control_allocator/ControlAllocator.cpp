@@ -41,6 +41,7 @@
 
 #include "ControlAllocator.hpp"
 #include "VehicleActuatorEffectiveness/ActuatorEffectivenessMultirotor.hpp"
+#include "VehicleActuatorEffectiveness/ActuatorEffectivenessVPP.hpp"
 
 #include <drivers/drv_hrt.h>
 #include <circuit_breaker/circuit_breaker.h>
@@ -262,6 +263,10 @@ ControlAllocator::update_effectiveness_source()
 
 		case EffectivenessSource::SPACECRAFT_2D:
 			tmp = new ActuatorEffectivenessSpacecraft(this);
+			break;
+
+		case EffectivenessSource::VPP:
+			tmp = new ActuatorEffectivenessVPP(this);
 			break;
 
 		case EffectivenessSource::ROVER_ACKERMANN: // Unreachable: Rover startup scripts don't load control_allocator. Controllers publish actuator_outputs directly.
